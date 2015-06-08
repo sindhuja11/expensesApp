@@ -5920,3 +5920,155 @@ Processing by ExpensesController#index as HTML
   [1m[35mExpense Load (0.2ms)[0m  SELECT "expenses".* FROM "expenses"
   Rendered expenses/index.html.erb within layouts/application (2.9ms)
 Completed 200 OK in 74ms (Views: 73.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 15:48:01 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 324ms (Views: 305.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-06-08 15:48:02 +0530
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/expenses" for ::1 at 2015-06-08 15:48:06 +0530
+Processing by ExpensesController#index as HTML
+  [1m[35mExpense Load (0.2ms)[0m  SELECT "expenses".* FROM "expenses"
+  Rendered expenses/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/expenses" for ::1 at 2015-06-08 15:53:12 +0530
+Processing by ExpensesController#index as HTML
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  Rendered expenses/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    13:     <td><%= expense.amount%></td>
+    14:     <td><%= expense.otherperson %></td>
+    15:     <td><%= expense.reason %></td>
+    16:     <td><%= expense.otherperson to expense.spentperson expense.amount/2 %></td>
+    17:     <td><%= link_to 'Show', expense_path(expense) %></td>
+    18:     <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+    19:     <td><%= link_to 'Destroy', expense_path(expense),
+  app/views/expenses/index.html.erb:16:in `block in _app_views_expenses_index_html_erb__1124752582558767615_70202717969080'
+  app/views/expenses/index.html.erb:10:in `_app_views_expenses_index_html_erb__1124752582558767615_70202717969080'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (58.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (74.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (14.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (34.2ms)
+
+
+Started GET "/expenses" for ::1 at 2015-06-08 15:55:05 +0530
+Processing by ExpensesController#index as HTML
+  [1m[35mExpense Load (0.4ms)[0m  SELECT "expenses".* FROM "expenses"
+  Rendered expenses/index.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `to' for #<#<Class:0x007fb2b41110e8>:0x007fb2b4060b58>):
+    13:     <td><%= expense.amount%></td>
+    14:     <td><%= expense.otherperson %></td>
+    15:     <td><%= expense.reason %></td>
+    16:     <td><%= expense.otherperson %> <%= to %> <%= expense.spentperson %> <%= expense.amount/2 %></td>
+    17:     <td><%= link_to 'Show', expense_path(expense) %></td>
+    18:     <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+    19:     <td><%= link_to 'Destroy', expense_path(expense),
+  app/views/expenses/index.html.erb:16:in `block in _app_views_expenses_index_html_erb__1124752582558767615_70202750622680'
+  app/views/expenses/index.html.erb:10:in `_app_views_expenses_index_html_erb__1124752582558767615_70202750622680'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (25.3ms)
+
+
+Started GET "/expenses" for ::1 at 2015-06-08 15:57:21 +0530
+Processing by ExpensesController#index as HTML
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  Rendered expenses/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-08 15:57:21 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-08 15:57:21 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-08 15:57:21 +0530
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-08 15:57:21 +0530
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-08 15:57:21 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-08 15:57:21 +0530
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-08 15:57:21 +0530
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-08 15:57:21 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-08 15:57:21 +0530
+
+
+Started GET "/expenses" for ::1 at 2015-06-08 15:57:59 +0530
+Processing by ExpensesController#index as HTML
+  [1m[35mExpense Load (0.5ms)[0m  SELECT "expenses".* FROM "expenses"
+  Rendered expenses/index.html.erb within layouts/application (59.2ms)
+Completed 200 OK in 90ms (Views: 88.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-08 15:57:59 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-08 15:57:59 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-08 15:57:59 +0530
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-08 15:57:59 +0530
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-08 15:57:59 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-08 15:57:59 +0530
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-08 15:57:59 +0530
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-08 15:57:59 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-08 15:57:59 +0530

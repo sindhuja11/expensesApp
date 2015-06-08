@@ -6,6 +6,7 @@
     <th>amount</th>
     <th>otherperson</th>
     <th>reason</th>
+    <th>otherperson to spentperson </th>
   </tr>
   <%= @expenses.each do |expense| %>
   <tr>
@@ -13,6 +14,7 @@
     <td><%= expense.amount%></td>
     <td><%= expense.otherperson %></td>
     <td><%= expense.reason %></td>
+    <td><%= expense.amount/2 %></td>
     <td><%= link_to 'Show', expense_path(expense) %></td>
     <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
     <td><%= link_to 'Destroy', expense_path(expense),
