@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spentperson: MyString
+  amount: 1
+  otherperson: MyString
+  reason: MyText
+
+two:
+  spentperson: MyString
+  amount: 1
+  otherperson: MyString
+  reason: MyText

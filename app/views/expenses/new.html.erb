@@ -1,0 +1,26 @@
+<h1>New expense</h1>
+
+<%= form_for :expense, url: expenses_path do |f| %>
+
+    <p>
+  <%= f.label :spentperson %> <br>
+  <%= f.text_field :spentperson %>
+</p>
+
+    <p>
+  <%= f.label :amount %> <br>
+  <%= f.text_field :amount %>
+</p>
+<p>
+  <%= f.label :otherperson %> <br>
+  <%= f.text_field :otherperson %>
+</p>
+<p>
+  <%= f.label :reason %> <br>
+  <%= f.text_area :reason %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
